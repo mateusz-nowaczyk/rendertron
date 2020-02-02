@@ -24,12 +24,11 @@ import * as path from 'path';
 
 const CONFIG_PATH = path.resolve(__dirname, '../config.json');
 
-
 export type Config = {
     cache: 'datastore' | 'memory' | null;
     timeout: number;
     port: string;
-    host: string
+    host: string;
     width: number;
     height: number;
     headers: { [key: string]: string };
@@ -38,12 +37,12 @@ export type Config = {
 export class ConfigManager {
     public static config: Config = {
         cache: null,
-        timeout: 10000,
+        timeout: 4000,
         port: '3000',
         host: '0.0.0.0',
         width: 1000,
         height: 1000,
-        headers: {}
+        headers: {},
     };
 
     static async getConfiguration(): Promise<Config> {
@@ -54,4 +53,3 @@ export class ConfigManager {
         return ConfigManager.config;
     }
 }
-
