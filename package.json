@@ -12,7 +12,7 @@
     "bin": "bin/rendertron",
     "scripts": {
         "build": "tsc",
-        "heroku-postbuild": "npm run start",
+        "heroku-postbuild": "tsc && npm run start",
         "prepack": "npm run build",
         "start": "node build/rendertron.js",
         "format": "find src -name '*.ts' | xargs clang-format --style=file -i",
